@@ -26,7 +26,9 @@ An Intelligent Smart Contract is a contract that can think before acting.
 It still lives onchain like any normal contract, but it can talk to an AI model (through GenLayer) to make decisions or generate outputs
 
 In short:
+
 Traditional smart contract = logic-only
+
 Intelligent smart contract = logic + AI reasoning
 
 
