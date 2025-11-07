@@ -48,7 +48,6 @@ To deploy and test your contract, you need test tokens.
 - Claim your faucet tokens.  
 - These tokens will cover deployment and gas fees.
 
----
 
 ## 2. Explore GenLayer Studio
 
@@ -56,13 +55,12 @@ Access the contract editor and environment:
 
 - Go to [https://studio.genlayer.com/contracts](https://studio.genlayer.com/contracts)
 
-- Review existing sample contracts
+- ## Review existing sample contracts
 - <img width="959" height="472" alt="Screenshot 2025-11-06 073132" src="https://github.com/user-attachments/assets/8e48b293-a4e2-4df5-8d2d-9d063a75bf26" />
 
-- Experiment with deploying a few to understand the interface and transaction flow
+- ## Experiment with deploying a few to understand the interface and transaction flow
 <img width="959" height="440" alt="Screenshot 2025-11-06 073405" src="https://github.com/user-attachments/assets/156dab37-ab04-4d66-8167-a1e443064377" />
 
----
 
 ## 3. knowing some fun way you can make use of intelligent smart contracts  
 
@@ -74,7 +72,7 @@ Example use cases:
 
 ## 4. Generate a Contract Using an LLM
 
-We’ll now use an LLM to generate your contract code.  
+We’ll now use an Ai to generate your contract code.  
 Copy the prompt below and paste it into ChatGPT, Claude, or Gemini.
 
 Then, under the section labeled **“Now here’s what I want the contract to do”**, replace the example with your own idea.
