@@ -55,8 +55,12 @@ To deploy and test your contract, you need test tokens.
 Access the contract editor and environment:
 
 - Go to [https://studio.genlayer.com/contracts](https://studio.genlayer.com/contracts)
-- Review existing **sample contracts**
+- 
+- Review existing sample contracts
+- <img width="959" height="472" alt="Screenshot 2025-11-06 073132" src="https://github.com/user-attachments/assets/8e48b293-a4e2-4df5-8d2d-9d063a75bf26" />
+
 - Experiment with deploying a few to understand the interface and transaction flow
+<img width="959" height="440" alt="Screenshot 2025-11-06 073405" src="https://github.com/user-attachments/assets/156dab37-ab04-4d66-8167-a1e443064377" />
 
 ---
 
@@ -152,16 +156,25 @@ Once your LLM sens you the contract code:
 Open [GenLayer Studio]([https://studio.genlayer.com/])
 
 Click New Contract
+<img width="959" height="474" alt="Screenshot 2025-11-06 073945" src="https://github.com/user-attachments/assets/048c88c9-ab70-4217-8316-073585eb7579" />
+
 
 Name it (e.g., myfirstcontract.py)
+<img width="959" height="440" alt="Screenshot 2025-11-06 074950" src="https://github.com/user-attachments/assets/b9a9bc52-56fe-4dd0-81b4-5d0f2eb19ffb" />
+
 
 Paste the code into the editor
 
 Click Deploy & Debug → Deploy
+<img width="959" height="438" alt="Screenshot 2025-11-06 075504" src="https://github.com/user-attachments/assets/609158a3-a9a5-43fa-84d4-cca7710eac98" />
+
 
 Approve the transaction 
+<img width="1919" height="948" alt="image" src="https://github.com/user-attachments/assets/e3f7a539-327e-436d-b937-49cb43be516d" />
+
 
 You’ve successfully deployed your first Intelligent Smart Contract.
+<img width="443" height="873" alt="image" src="https://github.com/user-attachments/assets/459d76d5-8379-4950-8bd6-69e5956e7724" />
 
 ## 6. Playground 
 
