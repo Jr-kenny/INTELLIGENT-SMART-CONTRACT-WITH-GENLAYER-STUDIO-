@@ -2,15 +2,35 @@
 EASY FUN STEPS TO DEPLOYING INTELLIGENT SMART CONTRACT WITH GENLAYER STUDIO 
 # Deploying an Intelligent Smart Contract on GenLayer Studio
 
-A step-by-step beginner’s guide to creating and deploying your first **Intelligent Smart Contract** using **GenLayer Studio** and an **LLM (Language Model)** such as ChatGPT, Claude, or Gemini.
+A step-by-step beginner’s guide to creating and deploying your first **Intelligent Smart Contract** using **GenLayer Studio** and an **AI /LLM (Language Model)** such as ChatGPT, Claude, or Gemini.
 
----
 
 ## Overview
+Before we begin what is the easiest way to describe genlayer?
 
 **GenLayer** is a blockchain development platform that allows you to build **AI-native smart contracts** in Python.
 
-Unlike traditional smart contracts that only follow pre-coded rules, *Intelligent Smart Contracts* can reason, make context-aware decisions, and adapt their behavior dynamically — all within deterministic blockchain logic.
+in my own way GenLayer is like giving smart contracts a brain.
+Normally, smart contracts can only follow fixed rules like “if this, then that, disburse only this, block that etc ”
+They can’t think, reason, or adapt.
+
+But GenLayer changes that.
+It connects blockchain logic to large language models (LLMs)  like the same kind of AI that powers ChatGPT  directly inside the contract executing flow .
+
+That means you can write contracts that don’t just store or transfer data only, They can analyze, decide, and generate responses on-chain.
+
+## What Is an Intelligent Smart Contract?
+
+An Intelligent Smart Contract is a contract that can think before acting.
+
+It still lives onchain like any normal contract, but it can talk to an AI model (through GenLayer) to make decisions or generate outputs
+
+In short:
+Traditional smart contract = logic-only
+Intelligent smart contract = logic + AI reasoning
+
+
+Unlike traditional smart contracts that only follow pre-coded rules, *Intelligent Smart Contracts* can reason, make context-aware decisions, and adapt their behavior.
 
 This guide will walk you through:
 1. Setting up your test environment  
@@ -40,23 +60,13 @@ Access the contract editor and environment:
 
 ---
 
-## 3. Understanding Intelligent Smart Contracts
-
-An **Intelligent Smart Contract (ISC)** is a new form of programmable agent that combines blockchain logic with AI reasoning.
-
-Key concepts:
-- **Built with Python** using the `py-genlayer` SDK  
-- **AI Execution:** Uses `gl.nondet.exec_prompt()` to call an embedded large language model  
-- **Determinism:** AI results are standardized across nodes via `eq_principle=gl.eq_principle.json_object()`  
-- **Autonomous Logic:** Can process text, classify data, make judgments, or act on-chain intelligently  
+## 3. knowing some fun way you can make use of intelligent smart contracts  
 
 Example use cases:
 - Autonomous moderation systems  
 - Smart voting or DAO agents  
 - Adaptive reward contracts  
-- AI-powered tipping jars or judges  
-
----
+- AI-powered or judges  
 
 ## 4. Generate a Contract Using an LLM
 
@@ -67,7 +77,7 @@ Then, under the section labeled **“Now here’s what I want the contract to do
 
 ---
 
-### **Prompt for Your LLM**
+### **Prompt for Your Ai **
 
 ````
 You are an expert GenLayer developer, fully familiar with how to build and deploy smart contracts using the `py-genlayer` SDK.
@@ -84,7 +94,7 @@ If you’ve never heard of GenLayer before, here’s a quick overview you must a
 
 ---
 
-### TASK
+TASK
 
 I want you to **create a working GenLayer smart contract in Python** using the rules below.
 
@@ -114,7 +124,7 @@ I want you to **create a working GenLayer smart contract in Python** using the r
 ---
 
 Now here’s what I want the contract to do:  
-(REPLACE THIS PART WITH YOUR OWN IDEA)
+(REPLACE THIS PART WITH YOUR OWN IDEA AND DELETE THE EXAMPLE )
 
 ### Example:
 “I want a simple ‘Always NO’ contract.  
@@ -135,12 +145,11 @@ Follow these rules precisely.
 ````
 
 
-# 5. Deploy Your Contract
+## 5. Deploy Your Contract
 
 Once your LLM sens you the contract code:
 
-Open [GenLayer Studio]([](https://studio.genlayer.com/))
-
+Open [GenLayer Studio]([https://studio.genlayer.com/])
 
 Click New Contract
 
@@ -150,11 +159,11 @@ Paste the code into the editor
 
 Click Deploy & Debug → Deploy
 
-Approve the transaction when prompted
+Approve the transaction 
 
 You’ve successfully deployed your first Intelligent Smart Contract.
 
-6. Next Steps
+## 6. Playground 
 
 After deployment, you can:
 
@@ -162,6 +171,6 @@ Interact with your contract directly in Studio
 
 Modify prompts or logic and redeploy
 
-Combine multiple contracts to create intelligent systems
+Combine multiple contracts to create intelligent systems, ( just edit the first prompt to your liking)
 
-Experiment with memory, adaptive logic, or reward-based behavior
+just keep experimenting there lots of fun in the studio 
