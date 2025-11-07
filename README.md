@@ -174,6 +174,7 @@ Approve the transaction
 
 
 You’ve successfully deployed your first Intelligent Smart Contract.
+
 <img width="443" height="873" alt="image" src="https://github.com/user-attachments/assets/459d76d5-8379-4950-8bd6-69e5956e7724" />
 
 ## 6. Playground 
@@ -187,3 +188,14 @@ Modify prompts or logic and redeploy
 Combine multiple contracts to create intelligent systems, ( just edit the first prompt to your liking)
 
 just keep experimenting there lots of fun in the studio 
+
+
+
+
+GenLayer discord : https://discord.gg/BSAfQhBxdz
+
+Official GenLayer Documentation : https://docs.genlayer.com/
+
+
+https://x.com/Jrken_ny
+
