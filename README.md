@@ -55,7 +55,7 @@ To deploy and test your contract, you need test tokens.
 Access the contract editor and environment:
 
 - Go to [https://studio.genlayer.com/contracts](https://studio.genlayer.com/contracts)
-- 
+
 - Review existing sample contracts
 - <img width="959" height="472" alt="Screenshot 2025-11-06 073132" src="https://github.com/user-attachments/assets/8e48b293-a4e2-4df5-8d2d-9d063a75bf26" />
 
