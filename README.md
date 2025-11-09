@@ -1,8 +1,8 @@
-# INTELLIGENT-SMART-CONTRACT-WITH-GENLAYER-STUDIO-
+# INTELLIGENT-CONTRACT-WITH-GENLAYER-STUDIO-
 EASY FUN STEPS TO DEPLOYING INTELLIGENT SMART CONTRACT WITH GENLAYER STUDIO 
-# Deploying an Intelligent Smart Contract on GenLayer Studio
+# Deploying an Intelligent Contract on GenLayer Studio
 
-A step-by-step beginner’s guide to creating and deploying your first **Intelligent Smart Contract** using **GenLayer Studio** and an **AI /LLM (Language Model)** such as ChatGPT, Claude, or Gemini.
+A step-by-step beginner’s guide to creating and deploying your first **Intelligent Contract** using **GenLayer Studio** and an **AI /LLM (Language Model)** such as ChatGPT, Claude, or Gemini.
 
 
 ## Overview
@@ -19,9 +19,9 @@ It connects blockchain logic to large language models (LLMs)  like the same kind
 
 That means you can write contracts that don’t just store or transfer data only, They can analyze, decide, and generate responses on-chain.
 
-## What Is an Intelligent Smart Contract?
+## What Is an Intelligent Contract?
 
-An Intelligent Smart Contract is a contract that can think before acting.
+An Intelligent Contract is a contract that can think before acting.
 
 It still lives onchain like any normal contract, but it can talk to an AI model (through GenLayer) to make decisions or generate outputs
 
@@ -29,10 +29,10 @@ In short:
 
 Traditional smart contract = logic-only
 
-Intelligent smart contract = logic + AI reasoning
+Intelligent contract = logic + AI reasoning
 
 
-Unlike traditional smart contracts that only follow pre-coded rules, *Intelligent Smart Contracts* can reason, make context-aware decisions, and adapt their behavior.
+Unlike traditional smart contracts that only follow pre-coded rules, *Intelligent Contracts* can reason, make context-aware decisions, and adapt their behavior.
 
 This guide will walk you through:
 1. Setting up your test environment  
@@ -64,7 +64,7 @@ Access the contract editor and environment:
 <img width="959" height="440" alt="Screenshot 2025-11-06 073405" src="https://github.com/user-attachments/assets/156dab37-ab04-4d66-8167-a1e443064377" />
 
 
-## 3. knowing some fun way you can make use of intelligent smart contracts  
+## 3. knowing some fun way you can make use of intelligent contracts  
 
 Example use cases:
 - Autonomous moderation systems  
