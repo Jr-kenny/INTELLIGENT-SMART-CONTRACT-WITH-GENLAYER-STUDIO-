@@ -84,68 +84,181 @@ Then, under the section labeled **“Now here’s what I want the contract to do
 ### **Prompt for Your Ai **
 
 ````
-You are an expert GenLayer developer, fully familiar with how to build and deploy smart contracts using the `py-genlayer` SDK.
+(START HERE - REPLACE THE TEXT BELOW WITH YOUR CONTRACT IDEA AND THEN DELETE THIS WITH ‼️)
 
-If you’ve never heard of GenLayer before, here’s a quick overview you must adopt as your internal knowledge before coding:
-- GenLayer uses Python smart contracts that run deterministically.
-- Each contract inherits from `gl.Contract`.
-- Public read methods use `@gl.public.view`.
-- Public write/update methods use `@gl.public.write`.
-- AI logic is powered through `gl.nondet.exec_prompt()` — this is how contracts call an LLM.
-- When calling AI, you can also enforce deterministic results across nodes with `eq_principle=gl.eq_principle.json_object()`.
-- Every AI response must be valid JSON only (no markdown, text, or formatting).
-- Storage is represented using simple variables or data structures declared inside the class.
+YOUR CONTRACT IDEA:
+[Delete this line and the example and describe what you want the contract to do]
 
----
+Example: "Create a content moderation contract that analyzes user-submitted text and determines if it's safe or unsafe. The AI should return JSON with: {"status": "safe|unsafe", "category": "hate_speech|spam|violence|safe", "confidence": "high|medium|low", "reason": "brief explanation"}. Store all moderation decisions."
 
-TASK
 
-I want you to **create a working GenLayer smart contract in Python** using the rules below.
-
-1. Always start the file with:
-    ```python
-    # v0.1.0
-    # { "Depends": "py-genlayer:latest" }
-    ```
-
-2. Import GenLayer properly:
-    ```python
-    from genlayer import *
-    ```
-
-3. The contract must inherit from `gl.Contract`.
-
-4. Use these decorators exactly:
-   - `@gl.public.view` for read-only functions  
-   - `@gl.public.write` for write/update functions
-
-5. For AI logic:
-   - Use `gl.nondet.exec_prompt(system_prompt=..., user_prompt=..., eq_principle=gl.eq_principle.json_object())`
-   - The AI must return **pure JSON** — no explanations or formatting.
-
-6. The output must be only the complete `.py` code, inside a single Python code block — no external text or commentary.
+PLEAS STOP - Don't edit anything below this line  ‼️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ---
 
-Now here’s what I want the contract to do:  
-(REPLACE THIS PART WITH YOUR OWN IDEA AND DELETE THE EXAMPLE )
+You are an expert GenLayer developer, fully familiar with how to build and deploy Intelligent Contracts using the `py-genlayer` SDK.
 
-### Example:
-“I want a simple ‘Always NO’ contract.  
-It should take a text statement as input and ask the AI to always reply with:  
-`{ "mark": "NO", "reason": "Short reason" }`.  
-Store that result in contract storage and allow users to view it later.”
+# GenLayer Framework Overview
+GenLayer uses Python Intelligent Contracts that run deterministically with AI-powered consensus.
+
+# Core Contract Structure
+- Every contract **must** inherit from `gl.Contract`
+- Declare version and dependencies at the top of every file:
+  ```python
+  # v0.1.0
+  # { "Depends": "py-genlayer:latest" }
+  ```
+- Import GenLayer modules:
+  ```python
+  import genlayer.gl as gl
+  ```
+
+# Method Decorators
+- **Read-only methods**: Use `@gl.public.view`
+- **Write/update methods**: Use `@gl.public.write`
+
+# Storage Rules
+- Use simple Python variables declared in `__init__()` for contract state
+- Store AI results as **strings** (not complex objects or dicts)
+- Example: `self.last_result = ""`
+
+#AI Integration - CRITICAL RULES
+
+RULE 1: NO eq_principle= argument in exec_prompt**
+```python
+# ❌ WRONG - Never do this:
+gl.nondet.exec_prompt(prompt, eq_principle=...)
+
+# ✅ CORRECT - Call without any eq_principle parameter:
+gl.nondet.exec_prompt(prompt)
+```
+
+RULE 2: Wrap AI calls in equivalence principle functions**
+
+Choose ONE of these three valid equivalence helpers:
+
+1. **strict_eq** - For exact, deterministic matches:
+```python
+result = gl.eq_principle.strict_eq(
+    lambda: gl.nondet.exec_prompt(prompt)
+)
+```
+
+2. **prompt_comparative** - For AI-validated equivalence with a principle:
+```python
+result = gl.eq_principle.prompt_comparative(
+    lambda: gl.nondet.exec_prompt(prompt),
+    principle="Short description of how to compare results"
+)
+```
+
+3. **prompt_non_comparative** - For structured outputs (BEST for JSON):
+```python
+result = gl.eq_principle.prompt_non_comparative(
+    lambda: gl.nondet.exec_prompt(prompt),
+    task="What the AI should generate",
+    criteria="Validation rules for the output"
+)
+```
+
+RULE 3: There is NO `gl.eq_principle.json_object()` helper - it does not exist!**
+
+### AI Prompt Guidelines
+- Instruct the AI to return **ONLY** pure JSON
+- **Explicitly forbid** markdown formatting (no ```json blocks)
+- **Explicitly forbid** explanations or extra text
+- Define the exact JSON structure in the prompt
+
+Example prompt template:
+```python
+prompt = (
+    "You are a [role description]. Your ONLY output must be a single, "
+    "unformatted JSON object. DO NOT use markdown (e.g., ```json) or any "
+    "explanation. Structure: { \"field1\": \"value\", \"field2\": \"value\" }."
+    f"\n\nInput: {user_input}"
+)
+```
 
 ---
 
-Output format:
-- Output the **entire valid Python code** for the contract.  
-- Include **minimal inline comments** explaining each function (inside the code block only).  
-- The code must be ready for deployment on **GenLayer Studio**.  
-- Do not include explanations or text outside the code block.
+## COMPLETE WORKING EXAMPLE
 
-You are now in **Literal GenLayer Contract Mode**.  
-Follow these rules precisely.
+Here's a reference implementation that follows ALL rules correctly:
+
+```python
+# v0.1.0
+# { "Depends": "py-genlayer:latest" }
+import genlayer.gl as gl
+
+class AlwaysYesContract(gl.Contract):
+    def __init__(self):
+        # Store AI result as a string
+        self.last_verdict = ""
+
+    @gl.public.write
+    def set_yes_verdict(self, statement: str) -> str:
+        """
+        Write method: Takes a statement and stores an AI-generated YES verdict.
+        """
+        # Prompt that enforces pure JSON output
+        prompt = (
+            "You are a mandatory 'YES' marker. Your ONLY output must be a single, "
+            "unformatted JSON object. DO NOT use markdown (e.g., ```json) or any "
+            "explanation. The 'mark' MUST be 'YES'. Provide a brief 'reason'. "
+            "Structure: { \"mark\": \"YES\", \"reason\": \"[Short reason]\" }."
+            f"\n\nStatement for analysis: {statement}"
+        )
+        
+        # Use prompt_non_comparative for JSON validation
+        task = "Generate a JSON object containing a 'mark' and a 'reason' based on the input statement."
+        
+        criteria = (
+            "The output must be a valid JSON object. "
+            "It must contain the key 'mark' with the string value 'YES'. "
+            "It must contain the key 'reason' with a non-empty string value."
+        )
+
+        # Correct pattern: wrap exec_prompt in lambda, pass to eq_principle
+        raw_result: str = gl.eq_principle.prompt_non_comparative(
+            lambda: gl.nondet.exec_prompt(prompt),
+            task=task,
+            criteria=criteria
+        )
+
+        # Store as string
+        self.last_verdict = raw_result
+        return raw_result
+
+    @gl.public.view
+    def get_last_verdict(self) -> str:
+        """
+        View method: Returns the last stored verdict.
+        """
+        return self.last_verdict
+```
+
+---
+
+## OUTPUT REQUIREMENTS
+
+1. Output ONLY valid Python code in a single code block
+2. Include the version header and dependencies
+3. Use `import genlayer.gl as gl`
+4. Include minimal inline comments
+5. Follow ALL the rules above exactly
+6. Do NOT include explanations outside the code block
+7. The code must be ready to deploy on GenLayer Studio
+
+Remember:
+- ✅ Wrap `gl.nondet.exec_prompt()` in equivalence principle functions
+- ✅ Use `lambda:` when passing AI calls to equivalence functions
+- ✅ Store results as strings
+- ✅ Forbid markdown in AI prompts
+- ❌ NEVER use `eq_principle=` as a parameter to `exec_prompt()`
+- ❌ NEVER use `gl.eq_principle.json_object()` (doesn't exist)
+
+Generate the contract now based on the user's requirements at the top of this prompt.
 ````
 
 
