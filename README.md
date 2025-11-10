@@ -77,8 +77,7 @@ Example use cases:
 We’ll now use an Ai to generate your contract code.  
 Copy the prompt below and paste it into ChatGPT, Claude, or Gemini.
 
-Then, under the section labeled **“Now here’s what I want the contract to do”**, replace the example with your own idea.
-
+EDIT THE PART I SAID YOU SHOULD EDIT 
 ---
 
 ### **Prompt for Your Ai **
